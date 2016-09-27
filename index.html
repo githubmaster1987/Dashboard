@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Dashboard v.4</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="css/plugins/chartist/chartist.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="black-bg">
+    <div class="row border-bottom">
+        <nav class="navbar navbar-static-top black-bg" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a href="index.html" class="logo">
+                    <img src="" alt="Vibing Ticket"/>
+                </a>            
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+                </ul>
+            <ul class="nav navbar-nav navbar-top-links navbar-right">
+                <li class="active">
+                    <a href="javascript:;">
+                    Create Events
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                    Browse Events
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                    Help
+                    </a>
+                </li>
+                <li class="classic-menu-dropdown">
+                    <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" class="hover-initialized">
+                    My Account <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-left">
+                        <li>
+                            <a href="javascript:;">
+                            <i class="fa fa-user"></i> Profile </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                            <i class="fa fa-key"></i> Log out </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mega-menu-dropdown mega-menu-full">
+                    <a href="javascript:;">
+                    Cart(0)
+                    </a>
+                </li>            </ul>
+        </nav>
+    </div>
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li>
+                    <a href="#" class="navbar-minimalize"><i class="fa fa-bars"></i></a>
+                </li>
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-th-large"></i><span class="nav-label">My Events</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="index.html">Create Event</a></li>
+                        <li><a href="dashboard_2.html">Manage Event</a></li>
+                        <li class="active"><a href="dashboard_4_1.html">Event Dashboard</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i> <span class="nav-label">My Tickets</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i> <span class="nav-label">My Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i> <span class="nav-label">Account Settings</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i> <span class="nav-label">My Subscriptions</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i> <span class="nav-label">My Subscriptions</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row nav-filter">
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">Choose Event :</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="selevent">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                    </select>
+                </div>
+            </div>        
+            <div class="form-group col-sm-6">
+                <label class="col-sm-2 control-label">Search :</label>
+                <div class="col-sm-10"><input type="text" class="form-control" placeholder="Search..." />
+            </div>
+            </div>
+        <div class="hr-line-dashed"></div>
+        </div>
+        <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-15">
+                    <div class="ibox">
+                        <div class="ibox-content blue-bg">
+                            <h1>$3400</h1>
+                            <span>TOTAL EARNINGS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-15">
+                    <div class="ibox">
+                        <div class="ibox-content blue-bg">
+                            <h1>$2350</h1>
+                            <span>TICKET SALE INCOME</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-15">
+                  <div class="sidebar-widget">
+                      <h4>TICKET SOLD  300</h4>
+                      <canvas id="foo" class="" style="width: 100%; height: 90px;"></canvas>
+                      <div class="goal-wrapper">
+                        <span class="gauge-value pull-left"></span>
+                        <span id="gauge-text" class="gauge-value pull-left">0</span>
+                        <span id="goal-text" class="goal-value pull-right">500</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-15">
+                    <div class="ibox">
+                        <div class="ibox-content blue-bg">
+                            <h1>200</h1>
+                            <span>TICKET UNSOLD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-15">
+                    <div class="ibox">
+                        <div class="ibox-content blue-bg">
+                            <h1>275</h1>
+                            <span>TOTAL ATTENDESS</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row tile_count">
+                <div class="col-md-4 tile_stats_count text-center">
+                  <span class="count-top">
+                    <i class="fa fa-user"></i>Total Malse
+                  </span>
+                  <div class="count">2,500</div>
+                  <span class="count-bottom"><i class="green"><i class="fa fa-sort-asc"></i> 34% </i>  From yesterday</span>
+                </div>
+
+                <div class="col-md-4 tile_stats_count  text-center">
+                  <span class="count-top">
+                    <i class="fa fa-user"></i>Total Malse
+                  </span>
+                  <div class="count">3,500</div>
+                  <span class="count-bottom"><i class="red"><i class="fa fa-sort-desc"></i> 40% </i>  From Today</span>
+                </div>
+
+                <div class="col-md-4 tile_stats_count  text-center">
+                  <span class="count-top">
+                    <i class="fa fa-user"></i>Total Malse
+                  </span>
+                  <div class="count">2,500</div>
+                  <span class="count-bottom"><i class="green"><i class="fa fa-sort-asc"></i> 34% </i>  From Monday</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-4  text-center">
+                    <div id="easypiechart1" data-percent="60">
+                      <div class="percent"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div id="easypiechart2" data-percent="70">
+                      <div class="percent"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div id="easypiechart3" data-percent="85">
+                      <div class="percent"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="row social-campaign">
+                <div class="col-lg-6 nopadding campaign">
+                  <div class="campaign-title">
+                    Top Campaign Revenue
+                  </div>
+                  <ul class="stat-list">
+                    <li>
+                        <small>Facebook Campaign</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 48%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Twitter Campaign</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 60%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Conventional Media</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 22%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Bill Boards</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 32%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                  </ul>                  
+                </div>
+                <div class="col-lg-6 nopadding campaign">
+                  <div class="campaign-title">
+                    Top Campaign Performance
+                  </div>
+                  <ul class="stat-list">
+                    <li>
+                        <small>Facebook Campaign</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 48%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Twitter Campaign</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 60%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Conventional Media</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 22%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <small>Bill Boards</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 32%;" class="progress-bar"></div>
+                        </div>
+                    </li>
+                  </ul>                  
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="donut_title">Ticket Sale Status</div>
+                <div id="donut" class="chart">
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Ticket Sales</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-line-chart"></div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-warning pull-right">Data has changed</span>
+                        <h5>User activity</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <small class="stats-label">Pages / Visit</small>
+                                <h4>236 321.80</h4>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <small class="stats-label">% New Visits</small>
+                                <h4>46.11%</h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <small class="stats-label">Last week</small>
+                                <h4>432.021</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <small class="stats-label">Pages / Visit</small>
+                                <h4>643 321.10</h4>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <small class="stats-label">% New Visits</small>
+                                <h4>92.43%</h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <small class="stats-label">Last week</small>
+                                <h4>564.554</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <small class="stats-label">Pages / Visit</small>
+                                <h4>436 547.20</h4>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <small class="stats-label">% New Visits</small>
+                                <h4>150.23%</h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <small class="stats-label">Last week</small>
+                                <h4>124.990</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+              <div class="ibox float-e-margins">
+                  <div class="ibox-title">
+                      <h5>Line Chart Example
+                          <small>With custom colors.</small>
+                      </h5>
+                  </div>
+                  <div class="ibox-content">
+                      <div>
+                          <canvas id="lineChart" height="140"></canvas>
+                      </div>
+                  </div>
+              </div>          
+          </div>
+          <div class="col-lg-6">
+              <div class="ibox float-e-margins">
+                  <div class="ibox-title">
+                      <h5>Stacked bar chart</h5>
+                  </div>
+                  <div class="ibox-content">
+                      <div id="stackchart" class="ct-perfect-fourth"></div>
+                  </div>
+              </div>            
+          </div>
+        </div>
+
+
+        </div>
+
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="js/plugins/flot/jquery.flot.time.js"></script>
+
+     <script src="js/plugins/flot/jquery.flot.stack.js"></script>
+<!--    <script src="js/plugins/flot/jquery.flot.crosshair.js"></script>
+    <script src="js/plugins/flot/jquery.flot.categories.js" type="text/javascript"></script>
+ -->
+    <script src="js/plugins/flot/curvedLines.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Jvectormap -->
+    <script src="js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+   <!-- GaugeJS-->
+    <script src="js/plugins/gauge.js/dist/gauge.min.js"></script>
+ <!-- EasyPieChart-->
+    <script src="js/plugins/easypiechart/easypiechart.js"></script>
+    <!-- <script src="js/plugins/easypiechart/jquery.easypiechart.js"></script> -->
+  <!-- ChartList -->
+    <script src="js/plugins/chartist/chartist.min.js"></script>
+    <!-- Custom and plugin javascript -->
+<!--     <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script> -->
+
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <!-- flot-dashboard-chart  -->
+    <script>
+        var data2 = [
+            [gd(2012, 1, 1), 7], [gd(2012, 1, 2), 6], [gd(2012, 1, 3), 4], [gd(2012, 1, 4), 8],
+            [gd(2012, 1, 5), 9], [gd(2012, 1, 6), 7], [gd(2012, 1, 7), 5], [gd(2012, 1, 8), 4],
+            [gd(2012, 1, 9), 7], [gd(2012, 1, 10), 8], [gd(2012, 1, 11), 9], [gd(2012, 1, 12), 6],
+            [gd(2012, 1, 13), 4], [gd(2012, 1, 14), 5], [gd(2012, 1, 15), 11], [gd(2012, 1, 16), 8],
+            [gd(2012, 1, 17), 8], [gd(2012, 1, 18), 11], [gd(2012, 1, 19), 11], [gd(2012, 1, 20), 6],
+            [gd(2012, 1, 21), 6], [gd(2012, 1, 22), 8], [gd(2012, 1, 23), 11], [gd(2012, 1, 24), 13],
+            [gd(2012, 1, 25), 7], [gd(2012, 1, 26), 9], [gd(2012, 1, 27), 9], [gd(2012, 1, 28), 8],
+            [gd(2012, 1, 29), 5], [gd(2012, 1, 30), 8], [gd(2012, 1, 31), 25]
+        ];
+
+        var data3 = [
+            [gd(2012, 1, 1), 800], [gd(2012, 1, 2), 500], [gd(2012, 1, 3), 600], [gd(2012, 1, 4), 700],
+            [gd(2012, 1, 5), 500], [gd(2012, 1, 6), 456], [gd(2012, 1, 7), 800], [gd(2012, 1, 8), 589],
+            [gd(2012, 1, 9), 467], [gd(2012, 1, 10), 876], [gd(2012, 1, 11), 689], [gd(2012, 1, 12), 700],
+            [gd(2012, 1, 13), 500], [gd(2012, 1, 14), 600], [gd(2012, 1, 15), 700], [gd(2012, 1, 16), 786],
+            [gd(2012, 1, 17), 345], [gd(2012, 1, 18), 888], [gd(2012, 1, 19), 888], [gd(2012, 1, 20), 888],
+            [gd(2012, 1, 21), 987], [gd(2012, 1, 22), 444], [gd(2012, 1, 23), 999], [gd(2012, 1, 24), 567],
+            [gd(2012, 1, 25), 786], [gd(2012, 1, 26), 666], [gd(2012, 1, 27),   ], [gd(2012, 1, 28), 900],
+            [gd(2012, 1, 29), 178], [gd(2012, 1, 30), 555], [gd(2012, 1, 31), 993]
+        ];
+
+
+        var dataset = [
+            {
+                label: "Number of orders",
+                data: data3,
+                color: "#1ab394",
+                bars: {
+                    show: true,
+                    align: "center",
+                    barWidth: 24 * 60 * 60 * 600,
+                    lineWidth:0
+                }
+
+            }, {
+                label: "Payments",
+                data: data2,
+                yaxis: 2,
+                color: "#1C84C6",
+                lines: {
+                    lineWidth:1,
+                        show: true,
+                        fill: true,
+                    fillColor: {
+                        colors: [{
+                            opacity: 0.2
+                        }, {
+                            opacity: 0.4
+                        }]
+                    }
+                },
+                splines: {
+                    show: false,
+                    tension: 0.6,
+                    lineWidth: 1,
+                    fill: 0.1
+                },
+            }
+        ];
+
+
+        var options = {
+            xaxis: {
+                mode: "time",
+                tickSize: [3, "day"],
+                tickLength: 0,
+                axisLabel: "Date",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Arial',
+                axisLabelPadding: 10,
+                color: "#d5d5d5"
+            },
+            yaxes: [{
+                position: "left",
+                max: 1070,
+                color: "#d5d5d5",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Arial',
+                axisLabelPadding: 3
+            }, {
+                position: "right",
+                clolor: "#d5d5d5",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: ' Arial',
+                axisLabelPadding: 67
+            }
+            ],
+            legend: {
+                noColumns: 1,
+                labelBoxBorderColor: "#000000",
+                position: "nw"
+            },
+            grid: {
+                hoverable: false,
+                borderWidth: 0
+            }
+        };
+
+        function gd(year, month, day) {
+            return new Date(year, month - 1, day).getTime();
+        }
+
+        var previousPoint = null, previousLabel = null;
+
+        $.plot($("#flot-dashboard-chart"), dataset, options);    
+    </script>            
+    <!-- /flot-dashboard-chart  -->
+    <!-- gauge.js -->
+    <script>
+      var opts = {
+          lines: 10,
+          angle: 0,
+          lineWidth: 0.3,
+          pointer: {
+              length: 0.75,
+              strokeWidth: 0.042,
+              color: '#1D212A'
+          },
+          limitMax: 'false',
+          colorStart: '#1ABC9C',
+          colorStop: '#1ABC9C',
+          strokeColor: '#F0F3F3',
+          generateGradient: true
+      };
+      var target = document.getElementById('foo'),
+          gauge = new Gauge(target).setOptions(opts);
+
+      gauge.maxValue = 500;
+      gauge.animationSpeed = 15;
+      gauge.set(300);
+      gauge.setTextField(document.getElementById("gauge-text"));
+    </script>
+    <!-- /gauge.js -->    
+    <!-- Easy pie chart -->
+    <script>
+      var chart1 = new EasyPieChart(document.getElementById('easypiechart1'), {
+        barColor: '#70a840',
+        trackColor: '#d8d8da',
+        scaleColor: false,
+        lineWidth: 12 ,
+        trackWidth: 12,
+        lineCap: 'butt',
+        onStep: function(from, to, percent) {
+          this.el.children[0].innerHTML = "<i class='fa fa-twitter social-icon'></i><br/><span class=social-body>"+Math.round(percent)*10+"</span><br><span class='social-comment'>Links</span>";
+        }
+      });
+      var chart2 = new EasyPieChart(document.getElementById('easypiechart2'), {
+        barColor: '#48aca6',
+        trackColor: '#d8d8da',
+        scaleColor: false,
+        lineWidth: 12 ,
+        trackWidth: 12,
+        lineCap: 'butt',
+        onStep: function(from, to, percent) {
+          this.el.children[0].innerHTML = "<i class='fa fa-facebook social-icon'></i><br/><span class=social-body>"+Math.round(percent)*13+"</span><br><span class='social-comment'>Share</span>";
+        }
+      });
+      var chart3 = new EasyPieChart(document.getElementById('easypiechart3'), {
+        barColor: '#4a8bba',
+        trackColor: '#d8d8da',
+        scaleColor: false,
+        lineWidth: 12 ,
+        trackWidth: 12,
+        lineCap: 'butt',
+        onStep: function(from, to, percent) {
+          this.el.children[0].innerHTML = "<i class='social-icon'>@</i><br/><span class=social-body>"+Math.round(percent)*11+"</span><br><span class='social-comment'>Mentions</span>";
+        }
+      });
+      </script>    
+    <!-- /Easy pie chart -->
+
+    <!-- donut chart -->
+    <script>
+    $(document).ready(function(){
+      var data = [];
+      for (var i = 0; i < 5; i++) {
+        data[i] = {
+          label: "Series" + (i + 1),
+          data: Math.floor(Math.random() * 100) + 1
+        }
+      }
+
+      function legendFormatter(label, series) {
+          return '<div ' + 
+                 'style="font-size:10pt;text-align:center;padding:2px;">' +
+                 label + ' ' + Math.round(series.percent)+'%</div>';
+      };
+
+    var placeholder = $("#donut");
+    $.plot($("#donut"), data, {
+          series: {
+              pie: {
+                  innerRadius: 0.5,
+                  show: true
+              }
+          },
+          legend: {
+            show: true,
+            labelFormatter: legendFormatter ,
+            // position: "ne" //or "nw" or "se" or "sw"
+          }          
+      });
+    /* end donut chart */
+    //  line chart 
+     var barOptions = {
+        series: {
+            lines: {
+                show: true,
+                lineWidth: 2,
+                fill: true,
+                fillColor: {
+                    colors: [{
+                        opacity: 0.0
+                    }, {
+                        opacity: 0.0
+                    }]
+                }
+            }
+        },
+        xaxis: {
+            tickDecimals: 0
+        },
+        colors: ["#1ab394"],
+        grid: {
+            color: "#999999",
+            hoverable: true,
+            clickable: true,
+            tickColor: "#D4D4D4",
+            borderWidth:0
+        },
+        legend: {
+            show: false
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "x: %x, y: %y"
+        }
+    };
+    var barData = {
+        label: "bar",
+        data: [
+            [1, 34],
+            [2, 25],
+            [3, 19],
+            [4, 34],
+            [5, 32],
+            [6, 44]
+        ]
+    };
+    $.plot($("#flot-line-chart"), [barData], barOptions);
+    //  end line chart
+    });
+    </script>
+    <!-- /donut chart  -->
+    <!-- begin chart.js line chart -->
+    <script>
+      var lineData = {
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [
+
+              {
+                  label: "Data 1",
+                  backgroundColor: 'rgba(26,179,148,0.5)',
+                  borderColor: "rgba(26,179,148,0.7)",
+                  pointBackgroundColor: "rgba(26,179,148,1)",
+                  pointBorderColor: "#fff",
+                  data: [28, 48, 40, 19, 86, 27, 90]
+              },{
+                  label: "Data 2",
+                  backgroundColor: 'rgba(220, 220, 220, 0.5)',
+                  pointBorderColor: "#fff",
+                  data: [65, 59, 80, 81, 56, 55, 40]
+              }
+          ]
+      };
+
+      var lineOptions = {
+          responsive: true
+      };
+
+
+      var ctx = document.getElementById("lineChart").getContext("2d");
+      new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+    </script>
+    <!-- end chart.js line chart -->
+
+    <!-- chartlist stack bar -->
+    <script>
+      $(document).ready(function($) {
+            var d1 = [];
+            for (var i = 0; i <= 10; i += 1) {
+              d1.push([i, parseInt(Math.random() * 30)]);
+            }
+
+            var d2 = [];
+            for (var i = 0; i <= 10; i += 1) {
+              d2.push([i, parseInt(Math.random() * 30)]);
+            }
+
+            var d3 = [];
+            for (var i = 0; i <= 10; i += 1) {
+              d3.push([i, parseInt(Math.random() * 30)]);
+            }
+
+            var stack = 0,
+              bars = true,
+              lines = false,
+              steps = false;
+
+            function plotWithOptions() {
+              $.plot("#stackchart", [ d1, d2, d3 ], {
+                series: {
+                  stack: stack,
+                  lines: {
+                    show: lines,
+                    fill: true,
+                    steps: steps
+                  },
+                  bars: {
+                    show: bars,
+                    barWidth: 0.6
+                  }
+                }
+              });
+            }
+
+            plotWithOptions();
+
+      });
+    </script>    
+    <!-- chartlist stack bar end -->
+</body>
+</html>
